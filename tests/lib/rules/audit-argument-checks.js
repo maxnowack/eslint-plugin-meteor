@@ -63,6 +63,8 @@ ruleTester.run('audit-argument-checks', rule, {
       `,
       parserOptions: { ecmaVersion: 6 },
     },
+    'Meteor.publish("foo", function (bar) { schema.validate(bar); })',
+    'Meteor.methods({ x: function (bar) { schema.validate(bar); } })',
   ],
 
   invalid: [
